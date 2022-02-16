@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String data = editText.getText().toString();
-                new Thread(new Runnable() { //클릭하면 스레드 생성
+                //클릭하면 스레드 생성 ※ 스레드를 생성 안하고 send()를 호출하면 반응X(네트워킹은 스레드 필수!)
+                new Thread(new Runnable() {
                     @Override
                     public void run() {
                         send(data);
